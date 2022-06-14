@@ -12,6 +12,8 @@
  
 
 
+<br><br><br><br><br>
+
  <div style="max-width: 400px" class="container w-75 mt-4 border">
 
         <img style="width: 100%" src="{{ asset('img/project/logo.png') }}" alt="logo">

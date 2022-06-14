@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>VURN</title>
+    <link rel="stylesheet" href="{{asset('css/portada.css')}}">
 </head>
 <body>
+    
+    <section id="hero">
+        <h1>Universidades <br>Del sureste</h1>
+        <a href="{{url('/inicio')}}" ><button>Explorar</button></a>
+    </section>
 
-    @auth
-    <a href="/admin">Admin</a>
-    <form action="/logout" method="POST">
-        @csrf
-        <a href="#" onclick="this.closest('form').submit()">Logout</a>
-    </form>
-        @else
-        <a href="/login">Log in</a>
-
-    @endauth
-
-    @if (session('status'))
-        <br>
-        {{session('status')}}
-    @endif
-
-  
-
-
+   
 
 </body>
 </html>
+   
+
+  
+

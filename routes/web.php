@@ -17,17 +17,9 @@ use Illuminate\Validation\ValidationException;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/login',function(){
-    return view('auth.login');
-})->name('login')->middleware('guest');
+})->name('/');
 
 
-
-Route::get('/admin',function(){
-    return view('welcome');
-})->middleware('auth');
-
-Route::post('/login',[LoginController::class,'login']);
-Route::post('/logout',[LoginController::class,'logout']);
+Route::get('/inicio',function(){
+    return view('web.inicio');
+})->name('incio');
