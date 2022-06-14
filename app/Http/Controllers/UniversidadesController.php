@@ -8,6 +8,7 @@ use App\Models\Tipo;
 use App\Models\Universidad;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class UniversidadesController extends Controller
@@ -43,9 +44,14 @@ class UniversidadesController extends Controller
 
 
     public function index(){
-        $universidad = Universidad::all();
 
-        return view('admin.index',['universidades'=>$universidad]);
+        $universidad = DB::table('universidads')->join('estados','universidads.estado_id','=','estados.id')
+        ->join('tipos','universidads.lugar_id','=','tipos.id')
+        ->get(['universidads.id','universidads.imagen','universidads.nombre','estados.estado','tipos.tipoU']);
+
+ 
+        
+       return view('admin.index',['universidades'=>$universidad]);
 
     }
 

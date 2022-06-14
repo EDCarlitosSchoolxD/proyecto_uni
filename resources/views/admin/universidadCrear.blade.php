@@ -3,7 +3,7 @@
 
 @section('content')
 
-
+<br><br><br><br>
 <div class="container border mt-5 p-4" >
         <form method="POST" enctype="multipart/form-data">
         @csrf

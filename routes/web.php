@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UniversidadesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
@@ -23,3 +24,7 @@ Route::get('/', function () {
 Route::get('/inicio',function(){
     return view('web.inicio');
 })->name('incio');
+
+
+Route::get('/univerisdad/{id}',[UniversidadesController::class,'infoUni'])->middleware('auth');
+

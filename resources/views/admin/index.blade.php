@@ -27,19 +27,21 @@
             <tr>
             <td>{{$universidad->id}}</td>
             <td>{{$universidad->nombre}}</td>
-            <td>{{$universidad->tipo_id}}</td>
-            <td>{{$universidad->estado_id}}</td>
+            <td>{{$universidad->tipoU}}</td>
+            <td>{{$universidad->estado}}</td>
             <td>
                 <img style="width: 60px" src="{{asset('storage').'/'.$universidad->imagen}}">
             </td>
             <td>
+                <a class="btn btn-primary" href="{{url('/admin/'.$universidad->id.'/edit')}}">Editar</a>
+                <br>
+                <a class="btn btn-success" href="{{url('/universidad/'.$universidad->id)}}">Ver mas</a>
                 <form action="{{ url('/admin/'.$universidad->id)}}" method="POST">
                     @csrf
                     {{method_field('DELETE')}}
                     <input class="btn btn-danger" type="submit" value="Eliminar" onclick="return confirm('¿Quieres borrar?')">
-                </form>|
-                <a href="{{url('/admin/'.$universidad->id.'/edit')}}">Editar</a>
-                |Ver mas</td>
+                </form>
+            </td>
             </tr>
         @endforeach
     </tbody>
