@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CarrerasController;
 use App\Http\Controllers\UniversidadesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -26,5 +27,8 @@ Route::get('/inicio',function(){
 })->name('incio');
 
 
-Route::get('/univerisdad/{id}',[UniversidadesController::class,'infoUni'])->middleware('auth');
+Route::get('/universidad/{id}',[UniversidadesController::class,'infoUni'])->name('universidadInfo');
+
+Route::get('/universidad/carrera/{id}',[CarrerasController::class,'infoCarrera'])->name('carrera');
+
 

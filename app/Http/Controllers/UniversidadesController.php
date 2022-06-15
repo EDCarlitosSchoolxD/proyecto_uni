@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carrera;
 use App\Models\Estado;
 use App\Models\Lugar;
 use App\Models\Tipo;
@@ -58,6 +59,19 @@ class UniversidadesController extends Controller
     public function destroy($id){
         
         $universidad = Universidad::findOrFail($id);
+
+        $carreras = Carrera::all()->where('universidad_id', '=',$id);
+
+       
+
+        foreach($carreras as $carrera){
+            if(Storage::delete('public/'.$carrera->imagen)&&Storage::delete('public/'.$carrera->plan_estudio)){
+                Carrera::destroy($carrera->id);
+            }
+        }
+
+
+
         if(Storage::delete('public/'.$universidad->imagen)){
 
             Universidad::destroy($id);
@@ -119,5 +133,30 @@ class UniversidadesController extends Controller
         return view('admin.universidadEdit',['datos'=>$datos]);
 
     }
+
+    public function infoUni($id){
+
+
+        $universidad = DB::table('universidads')->join('estados','universidads.estado_id','=','estados.id')
+        ->join('tipos','universidads.tipo_id','=','tipos.id')
+        ->join('lugars','universidads.lugar_id','=','lugars.id')
+        ->where('universidads.id','=',$id)
+        ->get(['universidads.id','universidads.imagen','universidads.nombre','universidads.telefono','universidads.url_web','universidads.direccion','lugars.lugar','estados.estado','tipos.tipoU']);
+
+        $carreras = DB::table('carreras')->join('tipo_carreras','carreras.tipo_id','=','tipo_carreras.id')
+        ->join('universidads','carreras.universidad_id','=','universidads.id')
+        ->join('estados','universidads.estado_id','=','estados.id')
+        ->join('lugars','universidads.lugar_id','=','lugars.id')
+        ->where('carreras.universidad_id','=',$id)
+        ->get(['carreras.id','carreras.nombre','universidads.nombre AS uniNombre','carreras.imagen','tipo_carreras.tipoC','estados.estado','lugars.lugar','carreras.universidad_id']);
+
+
+        $datos = ['universidad'=>$universidad,'carreras'=>$carreras];
+
+        return view('web.universidad',['datos'=>$datos]);
+
+    }
+
+
 
 }

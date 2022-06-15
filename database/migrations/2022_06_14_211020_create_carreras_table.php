@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('carreras', function (Blueprint $table) {
+        
             $table->id();
+            $table->string('nombre');
+            $table->foreignId('tipo_id')->constrained();
             $table->longText('objetivo');
             $table->longText('aprendizaje');
             $table->longText('descripcion');
@@ -22,10 +25,12 @@ return new class extends Migration
             $table->longText('perfil_ingreso');
             $table->longText('perfil_egreso');
             $table->longText('imagen');
-            $table->foreignId('universidads_id')->constrained();
+            $table->foreignId('universidad_id')->constrained();
+            $table->longText('plan_estudio');
             
             $table->timestamps();
 
+        
         });
     }
 
