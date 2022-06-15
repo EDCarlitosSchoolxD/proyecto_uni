@@ -24,5 +24,46 @@
 	</div>
 </section>
 
+<section id="nuestros-programas">
+	<div class="container">
+		<h2>Universidades</h2>
+		<div class="programas">
+			<div class="carta">
+				<h3>Q.Roo</h3>
+				<p>Aqu&iacute; encontrarás las universidades del estado.</p>
+				<a href="../unis/unis.html"><button>+ Info</button></a>
+			</div>
+			<div class="carta">
+				<h3>Yucat&aacute;n</h3>
+				<p>Aqu&iacute; encontrarás las universidades del estado.</p>
+				<a href="../unis/unis.html"><button>+ Info</button></a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="caracteristicas">
+	<div class="container"><center>
+		<h2>¿No sabes que estudiar?</h2>
+		<p>¡Prueba a realizar un test!</p><br>
+
+	<a href="../Test/Test.html"><button>Clik aquí</button></a>
+     </center></div>
+</section>
+
+
+<footer>
+	
+	<div class="container">
+		<div class="center"><br>
+		<img src="../media/logo.png"></div>
+		<div>
+		<h3>Con&oacute;cenos</h3>
+		<a href="#somos-proya"><p>Nosotros</p></a>
+		<a href="#nuestros-programas"><p>Estados</p></a>
+	    </div>
+	</div>
+</footer>
+
 
 @endsection

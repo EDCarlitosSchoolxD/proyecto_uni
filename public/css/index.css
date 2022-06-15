@@ -117,7 +117,7 @@ header a:hover{
         0deg,
         #0E67A6
     )
-    ,url("media/front-end.jpg");
+    ,url("../img/1.png");
 
 }
 
@@ -125,7 +125,7 @@ header a:hover{
     background-image: linear-gradient(
         0deg,
         #0E67A6)
-    ,url("media/full-stack.jpg");
+    ,url("../img/2.png");
 }
 
 
@@ -259,7 +259,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("media/front-end-cropped.jpg");
+        ,url("../img/1.png");
 
     }
 
@@ -269,7 +269,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("media/full-stack-cropped.jpg");
+        ,url("../img/2.png");
     }
 
     .carta:nth-child(3){
@@ -278,7 +278,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("media/python-cropped.jpg");
+        ,url("../img/project/full-stack.jpg");
 
     }
 

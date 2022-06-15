@@ -158,5 +158,20 @@ class UniversidadesController extends Controller
     }
 
 
+    public function quintanaRoo(){
+
+    }
+   public function yucatan(){
+    $universidades = DB::table('universidads')->join('estados','universidads.estado_id','=','estados.id')
+    ->join('tipos','universidads.tipo_id','=','tipos.id')
+    ->join('lugars','universidads.lugar_id','=','lugars.id')
+    ->where('universidads.estado_id','=','2')
+    ->get(['universidads.id','universidads.imagen','universidads.nombre AS uniNombre','estados.estado','lugars.lugar']);
+    
+
+    return view('web.quintanaroo',['universidades'=>$universidades]);
+
+    }
+
 
 }

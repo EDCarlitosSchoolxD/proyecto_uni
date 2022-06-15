@@ -32,3 +32,6 @@ Route::get('/universidad/{id}',[UniversidadesController::class,'infoUni'])->name
 Route::get('/universidad/carrera/{id}',[CarrerasController::class,'infoCarrera'])->name('carrera');
 
 
+
+Route::get('/universidades/quintana-roo',[UniversidadesController::class,'quintanaRoo']);
+Route::get('/universidades/yucatan',[UniversidadesController::class,'yucatan']);
