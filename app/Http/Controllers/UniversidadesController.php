@@ -105,7 +105,7 @@ class UniversidadesController extends Controller
     public function update(Request $request,$id){
 
         $datosUniversidad = request()->except(['_token','_method']);
-       
+
         if($request->hasFile('imagen')){
             $universidad = Universidad::findOrFail($id);
                 Storage::delete('public/'.$universidad->imagen);

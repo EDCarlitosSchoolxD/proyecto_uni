@@ -41,10 +41,12 @@
         <p class="card-text">{{$carrera->uniNombre}}</p>
         @auth
         <a class="btn btn-primary" href="{{url('/admin/carrera/edit').'/'.$carrera->id}}">Editar</a>
-        <form method="POST" action="{{url('/universidad').'/'.$carrera->universidad_id}}">
+        <form method="POST" action="{{url('/universidad').'/'.$carrera->id}}">
             @csrf
             {{method_field('DELETE')}}
+            <input type="hidden" name="universidad_id"" value="{{$carrera->universidad_id}}">
             <input class="btn btn-danger" type="submit" value="Eliminar" onclick="return confirm('¿Quieres borrar?')">
+            
         </form>   
         @endauth
        

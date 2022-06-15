@@ -11,7 +11,7 @@
 
 @auth
 <a class="btn btn-primary" href="{{route('admin')}}">Panel de admin</a>
-<a href="{{url('/universidad').'/'.$data['universidad_id']}}">Regresar</a> 
+<a href="{{url('/universidad').'/'.$datos['universidad_id']}}">Regresar</a> 
 @endauth
 
 
